@@ -1,19 +1,29 @@
 # Zircon Age Prediction with Machine Learning
 
-This project explores the application of machine learning to geochronological data, specifically aiming to predict zircon ages from isotopic ratios.
+This project explores the application of machine learning to geochronological data, with the goal of predicting zircon ages from isotopic ratios.
 
 ## Context
 
-I started this project influenced by a university activity related to the same topic. The class is **Physics IV**, but I decided to go further and develop this code as an additional, independent exploration of the subject.
+This project was inspired by a university activity on a related topic. The class is **Physics IV**, but I decided to extend the idea and develop this notebook as an additional independent exploration.
 
 ## Objective
 
-The goal is to predict zircon ages using U–Pb isotopic system measurements, applying machine learning techniques to approximate relationships that are traditionally described by physical equations.
+The main goal is to predict zircon ages using U–Pb isotopic measurements and evaluate how well a machine learning model can approximate relationships that are usually described through physical geochronological methods.
+
+## Project Files
+
+This repository currently contains:
+
+- `geoclassification.ipynb` — the main notebook with data loading, preprocessing, model training, evaluation, and visualization
+- `data/Database_v2.1_part1.xlsx` — the dataset file used in the analysis
+- `requirements.txt` — required Python libraries
+- `README.md` — project documentation
 
 ## Dataset
 
-The dataset comes from the **Global Zircon U–Th–Pb Database** and includes measurements such as:
+The dataset used in this project is part of the **Global Zircon U–Th–Pb Database**.
 
+Main input features used:
 - `isotope206Pb/238U`
 - `isotope207Pb/235U`
 - `isotope207Pb/206Pb`
@@ -23,38 +33,42 @@ Target variable:
 
 ## Methodology
 
-The workflow includes:
+The workflow in the notebook includes:
 
-1. Loading and cleaning Excel data
+1. Loading the Excel dataset
 2. Fixing the correct header row
-3. Selecting relevant isotopic features
+3. Selecting isotopic features
 4. Handling missing values
 5. Training a Random Forest regression model
-6. Evaluating performance using MAE and R²
-7. Visualizing predictions vs real values
+6. Evaluating model performance using MAE and R²
+7. Plotting real vs predicted ages
+8. Filtering physically inconsistent and extreme outliers
+9. Retraining the model after data refinement
 
 ## Results
 
-Current model performance:
+### Initial model performance
+- **MAE:** ~34.4 Ma
+- **R²:** ~0.892
 
-- **MAE:** ~25 Ma  
-- **R²:** ~0.98  
+### Performance after outlier filtering
+- **MAE:** ~25.6 Ma
+- **R²:** ~0.980
 
-These results indicate that the model captures most of the variation in zircon ages, despite the natural noise and uncertainty present in geochronological measurements.
-After removing unrealistic outliers, the model showed a much clearer alignment between real and predicted zircon ages. MAE 34 -> 25 AND R² 0.89 -> 98
+These results show that filtering unrealistic values significantly improved the model's performance and produced a more physically consistent prediction pattern.
+
 ## Visualization
 
-The scatter plot compares real and predicted ages:
+The notebook includes a scatter plot comparing real and predicted ages:
 
-- Each blue point represents a sample
-- The red line represents perfect predictions (y = x)
+- each blue point represents one sample
+- the red diagonal line represents perfect predictions (`y = x`)
 
-## Repository Structure
+After filtering unrealistic values, the points became much more concentrated around the ideal line.
 
-```text
-.
-├── data/
-├── notebooks/
-├── README.md
-├── requirements.txt
-└── .gitignore
+## How to Run
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
