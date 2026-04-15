@@ -18,6 +18,7 @@ This repository currently contains:
 - `data/Database_v2.1_part1.xlsx` — the dataset file used in the analysis
 - `requirements.txt` — required Python libraries
 - `README.md` — project documentation
+- `evolution` — graphs showing the evolution of the model
 
 ## Dataset
 
