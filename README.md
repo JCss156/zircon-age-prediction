@@ -37,11 +37,11 @@ The workflow includes:
 
 Current model performance:
 
-- **MAE:** ~34 Ma  
-- **R²:** ~0.89  
+- **MAE:** ~25 Ma  
+- **R²:** ~0.98  
 
 These results indicate that the model captures most of the variation in zircon ages, despite the natural noise and uncertainty present in geochronological measurements.
-
+After removing unrealistic outliers, the model showed a much clearer alignment between real and predicted zircon ages. MAE 34 -> 25 AND R² 0.89 -> 98
 ## Visualization
 
 The scatter plot compares real and predicted ages:
