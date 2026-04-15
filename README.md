@@ -47,15 +47,21 @@ The workflow in the notebook includes:
 
 ## Results
 
-### Initial model performance
+Initial model performance(V1):
 - **MAE:** ~34.4 Ma
 - **R²:** ~0.892
 
-### Performance after outlier filtering
+After filtering physically inconsistent and extreme age values(V2):
 - **MAE:** ~25.6 Ma
 - **R²:** ~0.980
 
-These results show that filtering unrealistic values significantly improved the model's performance and produced a more physically consistent prediction pattern.
+After applying a stricter lower-age threshold(V3):
+- **MAE:** ~16.2 Ma
+- **R²:** ~0.989
+
+These results show that data cleaning and outlier filtering were essential for improving the physical consistency of the dataset and the predictive performance of the model.
+
+
 
 ## Visualization
 
