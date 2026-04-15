@@ -55,8 +55,6 @@ The scatter plot compares real and predicted ages:
 .
 ├── data/
 ├── notebooks/
-├── outputs/
-├── src/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
