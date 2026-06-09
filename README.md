@@ -90,7 +90,7 @@ The target variable is the zircon age class.
 Using samples with at least five available geochemical or auxiliary isotopic features, the model achieved approximately:
 
 ```text
-Accuracy: ~77.8%
+Accuracy: ~84%
 ```
 
 The best-performing classes were:
